@@ -8,7 +8,7 @@ function calcBankDeposits(startAmount, monthlyPayment, annualRate, term) {
   let month = (term - (term % 30)) / 30;
 
   //to check if the input data is not appropriate
-  while (true) {
+
     if (
       startAmount <= 0 ||
       isNaN(startAmount) ||
@@ -19,13 +19,13 @@ function calcBankDeposits(startAmount, monthlyPayment, annualRate, term) {
       annualRate > 100 ||
       isNaN(term)
     ) {
-      let popup = document.getElementById("popup");
+      document.getElementById("popup").style.visibility = "visible";
       console.log("you have entered inappropriate data");
-      popup.className = "block";
+      
       return NaN;
     } else {
       // if input data is correct we start calculation
-      popup.className = "hidden"
+      
       annualRate = annualRate / 12 / 100;
       for (let i = 0; i < month; i++) {
         startAmount += monthlyPayment;
@@ -33,11 +33,12 @@ function calcBankDeposits(startAmount, monthlyPayment, annualRate, term) {
       }
       
       console.log(Math.trunc(startAmount));
-      alert("You will have " + Math.trunc(startAmount) + " AZN in your balance");
+      document.getElementById("popup").style.visibility = "hidden";
+      setTimeout(function(){alert("You will have " + Math.trunc(startAmount) + " AZN in your balance")}, 1);
       
     }
     return Math.trunc(startAmount);
-  }
+
 }
 
 let button = document.getElementById("calculate");

@@ -1,14 +1,14 @@
 body {
     background-color: #f8ed86;
+
 }
 
 .main_block {
     display: flex;
-    min-width: 20%;
+    min-width: 350px;
     margin: 5% auto;
     flex-direction: column;
     width: 37%;
-    min-width: 10%;
     padding: 1%;
     border: 2px solid #9C0631;
     border-radius: 5%;
@@ -39,7 +39,6 @@ label {
     justify-content: stretch;
     width: 100%;
     margin: 5% auto 1%;
-
     height:  50px;
 
     
@@ -59,12 +58,10 @@ button {
 
     
 }
-.block {
-    display: block;
+.hidden {
+    visibility: hidden;
     color: red  ;
     
 }
-.hidden {
-    display: none;
-}
+
 
